@@ -1,0 +1,15 @@
+import React from "react";
+import "../styles/Toast.css";
+
+function Toast({ message }) {
+
+  if (!message) return null;
+
+  return (
+    <div className="toast" role="status" aria-live="polite">
+      {message}
+    </div>
+  );
+}
+
+export default Toast;
