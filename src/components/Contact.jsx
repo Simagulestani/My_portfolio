@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Toast from "./Toast";
 
-import "../styles/Contact.css";
+import "../styles/contact.css";
 
 function Contact() {
   const [name, setName] = useState("");

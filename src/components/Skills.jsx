@@ -1,6 +1,6 @@
 import skills from "../data/skills";
 import SkillCard from "./SkillCard";
-import "../styles/Skills.css";
+import "../styles/skills.css";
 
 function Skills() {
   return (

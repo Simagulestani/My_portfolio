@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Education.css";
+import "../styles/education.css";
 import auafLogo from "../assets/auaf.png";
 import llcLogo from "../assets/llc.png";
 

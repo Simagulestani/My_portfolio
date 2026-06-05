@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Experience.css";
+import "../styles/experience.css";
 
 const experienceItems = [
   {
