@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import projects from "../data/projects";
 import ProjectCard from "./ProjectCard";
 import "../styles/projects.css";
@@ -18,9 +18,9 @@ function Projects() {
       </div>
 
       <div className="projects-footer">
-        <button type="button" className="view-all-btn">
-          View All
-        </button>
+        <Link to="/projects" className="view-all-btn">
+          View All Projects →
+        </Link>
       </div>
     </section>
   );

@@ -1,31 +1,40 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Toast from "./Toast";
 
 import "../styles/contact.css";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [social, setSocial] = useState("");
+  const [name, setName] = useState(() => {
+    try {
+      const saved = localStorage.getItem("contactForm");
+      if (saved) return JSON.parse(saved).name || "";
+    } catch { /* ignore */ }
+    return "";
+  });
+  const [email, setEmail] = useState(() => {
+    try {
+      const saved = localStorage.getItem("contactForm");
+      if (saved) return JSON.parse(saved).email || "";
+    } catch { /* ignore */ }
+    return "";
+  });
+  const [message, setMessage] = useState(() => {
+    try {
+      const saved = localStorage.getItem("contactForm");
+      if (saved) return JSON.parse(saved).message || "";
+    } catch { /* ignore */ }
+    return "";
+  });
+  const [social, setSocial] = useState(() => {
+    try {
+      const saved = localStorage.getItem("contactForm");
+      if (saved) return JSON.parse(saved).social || "";
+    } catch { /* ignore */ }
+    return "";
+  });
   const [toast, setToast] = useState("");
   const [errors, setErrors] = useState({});
   const [emailError, setEmailError] = useState("");
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("contactForm");
-      if (saved) {
-        const data = JSON.parse(saved);
-        setName(data.name || "");
-        setEmail(data.email || "");
-        setMessage(data.message || "");
-        setSocial(data.social || "");
-      }
-    } catch (e) {
-      console.warn("Could not restore draft:", e);
-    }
-  }, []);
 
   useEffect(() => {
     try {

@@ -1,8 +1,8 @@
-import React from "react";
-import "../styles/Hero.css";
+import "../styles/Home.css";
 import heroImage from "../assets/Profile.png";
+import resumePDF from "../assets/CV - Sima Gulestani (1).pdf";
 
-function Hero() {
+function Home() {
   return (
     <section id="home" className="hero">
       <div className="hero-inner">
@@ -16,30 +16,27 @@ function Hero() {
 
         <div className="hero-copy">
           <h1>Sima Gulestani</h1>
-          <p className="hero-role">Software Engineer</p>
+          <p className="hero-role"></p>
 
           <p className="hero-description">
-            Results-driven Software Developer with hands-on experience in
-            full-stack web development, focusing on Laravel, React, and modern
+            Full-Stack developer with hands-on experience in web development, focusing on React, and modern
             JavaScript frameworks.
           </p>
 
           <div className="hero-actions">
             <a
               href="https://github.com/Simagulestani"
-              target="_blank"
-              rel="noopener noreferrer"
+              target="github profile"
               className="hero-btn hero-btn-primary"
             >
               GitHub
             </a>
 
             <a
-              href="/assets/CV - Sima Gulestani (1).pdf"
+              href={resumePDF}
               target="_blank"
               rel="noopener noreferrer"
               className="hero-btn hero-btn-secondary"
-              download
             >
               Resume
             </a>
@@ -50,4 +47,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Home;

@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/experience.css";
 
 const experienceItems = [

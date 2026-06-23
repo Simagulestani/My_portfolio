@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/education.css";
 import auafLogo from "../assets/auaf.png";
 import llcLogo from "../assets/llc.png";

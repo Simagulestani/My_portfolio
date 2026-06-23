@@ -1,5 +1,3 @@
-import React from "react";
-import PropTypes from "prop-types";
 import "../styles/SkillCard.css";
 
 function SkillCard({ skill }) {
@@ -38,13 +36,6 @@ function SkillCard({ skill }) {
   );
 }
 
-SkillCard.propTypes = {
-  skill: PropTypes.shape({
-    name: PropTypes.string,
-    level: PropTypes.string,
-    icon: PropTypes.elementType,
-    details: PropTypes.string
-  }).isRequired
-};
+
 
 export default SkillCard;

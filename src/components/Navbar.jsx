@@ -1,40 +1,78 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 import "./../styles/Navbar.css";
 
-function Navbar({ theme, toggleTheme }) {
+function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (path, hash) => {
+    navigate(path + (hash || ""));
+  };
+
   return (
     <header className="navbar">
-      <a href="#home" className="logo" aria-label="Go to home">
+      <NavLink to="/" className="logo" aria-label="Go to home">
         Sima Gulestani
-      </a>
+      </NavLink>
 
       <nav role="navigation" aria-label="Main navigation">
         <ul className="nav-links">
+          <li><NavLink to="/" end className={({ isActive }) => (isActive && !location.hash ? "active" : "")}>Home</NavLink></li>
           <li>
-            <a href="#home">Home</a>
+            <a
+              href="/#skills"
+              className="nav-link-btn"
+              onClick={(e) => { e.preventDefault(); scrollToSection("/", "#skills"); }}
+            >
+              Skills
+            </a>
           </li>
-
           <li>
-            <a href="#skills">Skills</a>
+            <a
+              href="/#projects"
+              className="nav-link-btn"
+              onClick={(e) => { e.preventDefault(); scrollToSection("/", "#projects"); }}
+            >
+              Projects
+            </a>
           </li>
-
           <li>
-            <a href="#projects">Projects</a>
+            <a
+              href="/#experience"
+              className="nav-link-btn"
+              onClick={(e) => { e.preventDefault(); scrollToSection("/", "#experience"); }}
+            >
+              Experience
+            </a>
           </li>
-
-          <li><a href="#experience">Experience</a>
-          </li>
-
-          <li><a href="#education">Education</a>
-          </li>
-
           <li>
-            <a href="#publications">Publications</a>
+            <a
+              href="/#education"
+              className="nav-link-btn"
+              onClick={(e) => { e.preventDefault(); scrollToSection("/", "#education"); }}
+            >
+              Education
+            </a>
           </li>
-
           <li>
-            <a href="#contact">Contact</a>
+            <a
+              href="/#publications"
+              className="nav-link-btn"
+              onClick={(e) => { e.preventDefault(); scrollToSection("/", "#publications"); }}
+            >
+              Publications
+            </a>
+          </li>
+          <li>
+            <a
+              href="/#contact"
+              className="nav-link-btn"
+              onClick={(e) => { e.preventDefault(); scrollToSection("/", "#contact"); }}
+            >
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
@@ -52,10 +90,5 @@ function Navbar({ theme, toggleTheme }) {
     </header>
   );
 }
-
-Navbar.propTypes = {
-  theme: PropTypes.oneOf(["light", "dark"]).isRequired,
-  toggleTheme: PropTypes.func.isRequired,
-};
 
 export default Navbar;
