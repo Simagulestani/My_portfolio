@@ -1,0 +1,104 @@
+.about {
+  padding: 100px 24px;
+  background: var(--section-bg);
+}
+
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-content {
+  animation: fadeInUp 0.5s ease;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  margin: 0 0 20px;
+  color: var(--text);
+}
+
+.about-text > p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.about-philosophy {
+  background: var(--surface-soft);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  margin: 32px 0;
+  border-left: 4px solid var(--accent);
+}
+
+.about-philosophy h4 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.about-philosophy p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+  font-style: italic;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.about-highlight {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.about-highlight:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.highlight-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.about-highlight h4 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.about-highlight p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 70px 20px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+}
